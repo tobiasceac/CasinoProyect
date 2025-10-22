@@ -1,4 +1,4 @@
-package Gestor_Casino;
+package gestorcasino;
 
 public interface CasinoDAO {
     //Metodos CRUD
