@@ -1,8 +1,6 @@
 package gestorcasino;
 
 public class Mesa {
-    //Esto es una prueba de branch
-    //Esto es un commit desde la branch de tobias
     private String codigo;
     private int numeroMesa;
     private int numeroJugadores;
@@ -11,20 +9,16 @@ public class Mesa {
     private double balance;
     private TipoJuego tipoJuego;
 
-    public Mesa (String codigo, int numeroMesa ,int numeroJugadores, double ganancias, double perdidas, double balance){
-        setCodigo(codigo);
-        setNumeroMesa(numeroMesa);
-        setNumeroJugadores(numeroJugadores);
-        setGanancias(ganancias);
-        setPerdidas(perdidas);
-        setBalance(balance);
+    public Mesa (){
+
     }
 
     public String getCodigo() {
         return codigo;
     }
-
     public void setCodigo(String codigo) {
+        int contador = 0;
+        contador++;
         this.codigo = codigo;
     }
 
