@@ -1,6 +1,7 @@
 package gestorcasino;
 
 public class Mesa {
+    //Esto es una prueba de branch
     private String codigo;
     private int numeroMesa;
     private int numeroJugadores;
