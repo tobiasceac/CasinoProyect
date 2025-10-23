@@ -14,8 +14,13 @@ Atributos:
 - Ganancias
 - Dinero Invertido
 ### Mesa
+Atributos:
+- Ganancias
+- Perdidas
 #### Blackjack
 ### Establecimiento
+Atributos:
+- Ganancias
 #### Bar
 # Metodos Crud
 - Creación de usuario/mesa
