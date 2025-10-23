@@ -2,6 +2,7 @@ package gestorcasino;
 
 public class Mesa {
     //Esto es una prueba de branch
+    //Esto es un commit desde la branch de tobias
     private String codigo;
     private int numeroMesa;
     private int numeroJugadores;
