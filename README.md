@@ -12,14 +12,19 @@ Atributos:
 - Nombre
 - Apellidos
 - Ganancias
-- Dinero Invertido
+- Gastos
 ### Mesa
 Atributos:
+- Codigo
+- NumeroMEsa
+- NumeroJugadores
 - Ganancias
 - Perdidas
+- Balance
 #### Blackjack
 ### Establecimiento
 Atributos:
+- Codigo
 - Ganancias
 #### Bar
 # Metodos Crud
