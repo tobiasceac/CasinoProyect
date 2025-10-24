@@ -1,5 +1,6 @@
 package gestorcasino;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface CasinoDAO {
@@ -128,4 +129,34 @@ public interface CasinoDAO {
      * @return Lista con las mesas de tipoJuego
      */
     public List<Mesa> mesaPorJuego(TipoJuego tipoJuego);
+
+    /**
+     * Obtienes cuánto ha gastado, cuándo y el código de la mesa jugada
+     *
+     * @param dni del cliente del que se quiere consultar la información
+     *
+     * @return String con toda la información
+     */
+    public String resumenCliente(String dni);
+
+    /**
+     * Calcula las ganancias del casino gracias al fichero con el historial
+     *
+     * @return las ganancias en tipo float
+     */
+    public float calcularGananciaCasio();
+
+    /**
+     * Metodo para consultar los 5 clientes que más han ganado en casino
+     *
+     * @return List
+     */
+    public List<Cliente>clientesMasGanado();
+
+    /**
+     *
+     *
+     * @return
+     */
+    public float maxGananciaCasinoUnDia();
 }
