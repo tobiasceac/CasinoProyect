@@ -1,6 +1,12 @@
 package gestorcasino;
 
+import exceptions.NotEnoughPlayersException;
+
+import java.util.UUID;
+
 public class Mesa {
+    private static int contadorMesas = 0;
+
     private String codigo;
     private int numeroMesa;
     private int numeroJugadores;
@@ -9,16 +15,44 @@ public class Mesa {
     private double balance;
     private TipoJuego tipoJuego;
 
-    public Mesa (){
-
+    //Constructor para generar mesas dentro del programa
+    public Mesa (int numeroJugadores, TipoJuego tipoJuego){
+        this.codigo = generarCodigo();
+        this.numeroMesa = ++contadorMesas;
+        validarNumeroJugadores(tipoJuego,numeroJugadores);
+        this.numeroJugadores = numeroJugadores;
+        setTipoJuego(tipoJuego);
     }
 
+    //Metodo para generar un codigo
+    private String generarCodigo(){
+        return "MESA-" + UUID.randomUUID().toString().substring(0,5).toUpperCase();
+    }
+
+    //Metodo para validar el número máximo de jugadores por tipo de juego
+    private void validarNumeroJugadores(TipoJuego tipo, int nJugadores){
+        if (nJugadores <= 0){
+            throw new NotEnoughPlayersException("No puede ser 0 o menos jugadores en la mesa");
+        }
+        switch (tipo){
+            case BLACKJACK:
+                if (nJugadores > 7){
+                    throw new IllegalArgumentException("Una mesa de BLACKJACK no puede tener más de 7 jugadores");
+                }
+                break;
+            case POKER:
+                if (nJugadores >10){
+                    throw new IllegalArgumentException("Una mesa de poker no puede tener más de 10 jugadores");
+                }
+                break;
+        }
+    }
+    
     public String getCodigo() {
         return codigo;
     }
+
     public void setCodigo(String codigo) {
-        int contador = 0;
-        contador++;
         this.codigo = codigo;
     }
 
@@ -26,9 +60,10 @@ public class Mesa {
         return numeroMesa;
     }
 
-    public void setNumeroMesa(int nMesa){
-        this.numeroMesa = nMesa;
+    public void setNumeroMesa(int numeroMesa){
+        this.numeroMesa = numeroMesa;
     }
+
     public int getNumeroJugadores() {
         return numeroJugadores;
     }
@@ -59,5 +94,26 @@ public class Mesa {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public TipoJuego getTipoJuego() {
+        return tipoJuego;
+    }
+
+    public void setTipoJuego(TipoJuego tipoJuego) {
+        this.tipoJuego = tipoJuego;
+    }
+
+    @Override
+    public String toString() {
+        return "Mesa{" +
+                "codigo='" + codigo + '\'' +
+                ", numeroMesa=" + numeroMesa +
+                ", numeroJugadores=" + numeroJugadores +
+                ", ganancias=" + ganancias +
+                ", perdidas=" + perdidas +
+                ", balance=" + balance +
+                ", tipoJuego=" + tipoJuego +
+                '}';
     }
 }
