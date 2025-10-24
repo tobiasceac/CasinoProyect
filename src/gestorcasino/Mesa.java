@@ -10,9 +10,6 @@ public class Mesa {
     private String codigo;
     private int numeroMesa;
     private int numeroJugadores;
-    private double ganancias;
-    private double perdidas;
-    private double balance;
     private TipoJuego tipoJuego;
 
     //Constructor para generar mesas dentro del programa
@@ -72,30 +69,6 @@ public class Mesa {
         this.numeroJugadores = numeroJugadores;
     }
 
-    public double getGanancias() {
-        return ganancias;
-    }
-
-    public void setGanancias(double ganancias) {
-        this.ganancias = ganancias;
-    }
-
-    public double getPerdidas() {
-        return perdidas;
-    }
-
-    public void setPerdidas(double perdidas) {
-        this.perdidas = perdidas;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
     public TipoJuego getTipoJuego() {
         return tipoJuego;
     }
@@ -110,9 +83,6 @@ public class Mesa {
                 "codigo='" + codigo + '\'' +
                 ", numeroMesa=" + numeroMesa +
                 ", numeroJugadores=" + numeroJugadores +
-                ", ganancias=" + ganancias +
-                ", perdidas=" + perdidas +
-                ", balance=" + balance +
                 ", tipoJuego=" + tipoJuego +
                 '}';
     }
