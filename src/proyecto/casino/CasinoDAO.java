@@ -1,131 +1,140 @@
 package proyecto.casino;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface CasinoDAO {
     //Metodos CRUD
-    /**
-     * Crea un objeto usuario
-     */
-    public void crearUsuario();
 
     /**
-     * Crea un objeto Mesa
+     * Crea un objeto cliente
      */
-    public void crearMesa();
+    public void crearCliente();
 
     /**
-     * Consulta toda la información de la mesa
-     *
-     * @param codigo único de la mesa de la que se quiere consultar la información
-     *
-     * @return información de la mesa solicitada
+     * Crea un objeto Servicio
      */
-    public String consultaMesa(String codigo);
+    public void crearServicio();
 
     /**
-     * Consulta toda la información de un usuario
-     * 
-     * @param dni Identificador único de cada usuario
-     *            
-     * @return Toda la información del usuario solicitado
+     * Crea un objeto Log
      */
-    public String consultaUsuario(String dni);
+    public void crearLog();
 
     /**
-     * Actualiza la información de una mesa
-     *
-     * @param codigo único de una mesa
-     *
+     * Consulta toda la información del Servicio
+     * @param codigo único del servicio del que se quiere consultar la información
+     * @return String con la información del servicio solicitado
+     */
+    public String consultaServicio(String codigo);
+
+    /**
+     * Consulta todos los servicios almacenados
+     * @return List con todos los servicios que tenemos
+     */
+    public List<Servicio> consultaServicios();
+
+    /**
+     * Consulta la información de un cliente
+     * @param dni String único de un cliente
+     * @return String con toda la información del cliente solicitado
+     */
+    public String consultaCliente(String dni);
+
+    /**
+     * Consulta todos los clientes registrados
+     * @return List con todos los clientes registrados
+     */
+    public List<Cliente>consultaClientes();
+
+    /**
+     * Consulta un Log específico
+     * @param codigo del servicio
+     * @param dni del cliente
+     * @param fecha del log
+     * @return String con la informacion
+     */
+    public String consultaLog(String codigo, String dni, LocalDate fecha);
+
+    /**
+     * Consulta todos los Log almacenados
+     * @return List con todos los Log
+     */
+    public List<Log>consultaLog();
+
+    /**
+     * Actualiza la información de un Servicio
+     * @param codigo único de un Servicio
      * @return True si se ha podido actualizar los datos de la mesa
      */
-    public boolean actualizarMesa(String codigo);
+    public boolean actualizarServicio(String codigo);
 
     /**
-     * Actualiza la información de un usuario
-     *
-     * @param dni único que permite identificar al usuario
-     *
-     * @return True si se ha podido actualizar los datos del usuario
+     * Actualiza la información de un Cliente
+     * @param dni único que permite identificar al Cliente
+     * @return True si se ha podido actualizar los datos del Cliente
      */
-    public boolean actualizarUsuario(String dni);
+    public boolean actualizarCliente(String dni);
 
     /**
      * Borra una mesa
-     *
-     * @param mesa, recibe el objeto Mesa
-     *
+     * @param servicio recibe el objeto Mesa
      * @return True si se ha podido eliminar el objeto
      */
-    public boolean borrarMesa(Mesa mesa);
+    public boolean borrarServicio(Servicio servicio);
 
     /**
-     * Borra un cliente completamente
-     *
+     * Borra un cliente
      * @param cliente, recibe el objeto Cliente
-     *
      * @return True si se ha podido eliminar la mesa
      */
-    public boolean borrarUsuario(Cliente cliente);
+    public boolean borrarCliente(Cliente cliente);
 
-    //Metodos no CRUD
+
+
+
+
+    //Metodos NO CRUD BÁSICOS
     /**
      * Devuelve el valor del dinero invertido en comida/bebida de un cliente
-     *
-     * @param cliente a devolver lo invertido en comida
-     *
-     * @return Lo gastado en alimentos por cliente
+     * @param dni
+     * @param concepto
+     * @return variable gastado en alimentos por cliente
      */
-    public double dineroInvertidoAlimentos(Cliente cliente);
+    public double GanaciasAlimentos(String dni, String concepto);
 
     /**
      * Devuelve el valor del dinero invertido por un cliente en el casino
-     *
-     * @param cliente a devolver lo invertido en el casino
-     *
+     * @param dni a devolver lo invertido en el casino
      * @return Lo gastado en el casino por cliente
      */
-    public double dineroInvertido(Cliente cliente);
+    public double dineroGanadoClienteEnDia(String dni, LocalDate fecha);
 
     /**
      * Devuelve la cantidad de veces que un cliente ha jugado en una mesa
-     * 
-     * @param cliente Objeto cliente sobre el que se quiera consultar
-     *
-     * @param mesa Objeto Mesa sobre la que ha jugado cliente
-     *
+     * @param dni
+     * @param codigo
      * @return La cantidad de veces que ha jugado cliente en una mesa
      */
-    public int vecesJugadasMesa(Cliente cliente, Mesa mesa);
+    public int vecesClienteJuegaMesa(String dni, String codigo);
 
 
     /**
-     * Devuelve el total de lo ganado en mesas
-     *
-     * @return Lo ganado en todas las mesas
+     * Devuelve el total ganado en mesas
+     * @return double con el total ganado en mesas
      */
     public double ganadoMesas();
 
     /**
      * Devuelve el total de lo ganado en establecimientos
-     *
-     * @return La suma de lo ganado en todos los establecimientos
+     * @return double con el total ganado en establecimientos
      */
     public double ganadoEstablecimientos();
 
     /**
-     * Devuelve el cliente que mas ha gastado en el casino
-     *
-     * @return El cliente que más ha gastado en el casino
-     */
-    public Cliente mayorCliente();
-
-    /**
      * Devuelve una lista con las mesas que sean de tipoJuego
-     *
-     * @param tipoJuego TipoJuego a buscar en el archivo
-     *
+     * @param tipoServicio a buscar en el archivo
      * @return Lista con las mesas de tipoJuego
      */
-    public List<Mesa> mesaPorJuego(TipoJuego tipoJuego);
+    public List<Servicio> devolverServicios (TipoServicio tipoServicio);
 }

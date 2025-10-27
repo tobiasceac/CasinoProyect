@@ -4,8 +4,6 @@ public class Cliente {
     private String dni;
     private String nombre;
     private String apellidos;
-    private double ganancias = 0;
-    private double gastos = 0;
 
     public Cliente(String dni, String nombre, String apellidos){
         setDni(dni);
@@ -50,28 +48,6 @@ public class Cliente {
             throw new IllegalArgumentException("Apellidos no puede estar vacío o ser nulo.");
         }
         this.apellidos = apellidos;
-    }
-
-    public double getGanancias() {
-        return ganancias;
-    }
-
-    public void setGanancias(double ganancias) {
-        if (ganancias < 0) {
-            throw new IllegalArgumentException("Las ganancias no puede ser negativo.");
-        }
-        this.ganancias = ganancias;
-    }
-
-    public double getGastos() {
-        return gastos;
-    }
-
-    public void setGastos(double gastos) {
-        if (gastos > 0) {
-            throw new IllegalArgumentException("height no puede ser negativo.");
-        }
-        this.gastos = gastos;
     }
 
     private boolean validarDni(String dni){
