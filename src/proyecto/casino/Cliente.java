@@ -1,4 +1,4 @@
-package gestorcasino;
+package proyecto.casino;
 
 public class Cliente {
     private String dni;

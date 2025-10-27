@@ -1,4 +1,4 @@
-package gestorcasino;
+package proyecto.casino;
 
 import java.util.List;
 

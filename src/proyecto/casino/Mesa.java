@@ -1,10 +1,11 @@
-package gestorcasino;
+package proyecto.casino;
 
 import exceptions.NotEnoughPlayersException;
 
 import java.util.UUID;
 
 public class Mesa {
+    //TODO: BORRAR ESTA CLASE
     private static int contadorMesas = 0;
 
     private String codigo;
