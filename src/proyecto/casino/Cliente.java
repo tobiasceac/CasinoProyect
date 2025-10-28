@@ -1,5 +1,7 @@
 package proyecto.casino;
 
+import java.util.Objects;
+
 public class Cliente {
     private String dni;
     private String nombre;
@@ -63,5 +65,21 @@ public class Cliente {
         int resto = Integer.parseInt(numeros) % 23;
 
         return let.equals(letras[resto]);
+    }
+
+    @Override
+    public boolean equals(Object obj){
+
+        if (this == obj) return true;
+
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Cliente cliente = (Cliente) obj;
+        return Objects.equals(dni, cliente.dni);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dni);
     }
 }
