@@ -1,5 +1,6 @@
 package proyecto.casino;
 
-public class CasinoDAOFile {
+public class
+CasinoDAOFile {
 
 }
