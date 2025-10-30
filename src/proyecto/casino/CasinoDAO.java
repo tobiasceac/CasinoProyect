@@ -9,17 +9,18 @@ public interface CasinoDAO {
     /**
      * Crea un objeto cliente
      */
-    public void crearCliente();
+    public void addCliente(Cliente cliente);
 
     /**
      * Crea un objeto Servicio
      */
-    public void crearServicio();
+    public void addServicio(Servicio servicio);
 
     /**
-     * Crea un objeto Log
+     * Añade un objeto Log al almacén
+     * @param log objeto que recibe como parámetro para agregar al almacén
      */
-    public void crearLog();
+    public void addLog(Log log);
 
     /**
      * Consulta toda la información del Servicio
