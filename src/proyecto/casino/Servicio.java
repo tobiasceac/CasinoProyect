@@ -1,11 +1,12 @@
 package proyecto.casino;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Servicio {
+public class Servicio implements Externalizable {
     private String codigo;
     private TipoServicio tipo;
     private String nombreServicio;
@@ -98,4 +99,6 @@ public class Servicio {
                 ", capacidadMaxima=" + capacidadMaxima +
                 '}';
     }
+
+
 }

@@ -1,8 +1,9 @@
 package proyecto.casino;
 
+import java.io.Externalizable;
 import java.util.Objects;
 
-public class Cliente {
+public class Cliente implements Externalizable {
     private String dni;
     private String nombre;
     private String apellidos;

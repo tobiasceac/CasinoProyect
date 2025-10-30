@@ -1,9 +1,10 @@
 package proyecto.casino;
 
+import java.io.Externalizable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Log {
+public class Log implements Externalizable {
     private Cliente cliente;
     private Servicio servicio;
     private LocalDate fecha;

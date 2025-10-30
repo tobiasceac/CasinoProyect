@@ -7,12 +7,14 @@ public interface CasinoDAO {
     //Metodos CRUD
 
     /**
-     * Crea un objeto cliente
+     * Añade un objeto cliente al almacén
+     * @param cliente objeto que recibe como parámetro para agregar al almacén
      */
     public void addCliente(Cliente cliente);
 
     /**
-     * Crea un objeto Servicio
+     * Añade un objeto Servicio al almacén
+     * @param servicio objeto que recibe como parámetro para agregar al almacén
      */
     public void addServicio(Servicio servicio);
 
@@ -33,7 +35,7 @@ public interface CasinoDAO {
      * Consulta todos los servicios almacenados
      * @return List con todos los servicios que tenemos
      */
-    public List<Servicio> consultaServicios();
+    public List<Servicio> listaServicios();
 
     /**
      * Consulta la información de un cliente
@@ -46,7 +48,7 @@ public interface CasinoDAO {
      * Consulta todos los clientes registrados
      * @return List con todos los clientes registrados
      */
-    public List<Cliente>consultaClientes();
+    public List<Cliente> listaClientes();
 
     /**
      * Consulta un Log específico
@@ -61,7 +63,7 @@ public interface CasinoDAO {
      * Consulta todos los Log almacenados
      * @return List con todos los Log
      */
-    public List<Log>consultaLog();
+    public List<Log> listaLog();
 
     /**
      * Actualiza la información de un Servicio
@@ -90,8 +92,6 @@ public interface CasinoDAO {
      * @return True si se ha podido eliminar la mesa
      */
     public boolean borrarCliente(Cliente cliente);
-
-
 
 
 
@@ -137,5 +137,5 @@ public interface CasinoDAO {
      * @param tipoServicio a buscar en el archivo
      * @return Lista con las mesas de tipoJuego
      */
-    public List<Servicio> devolverServicios (TipoServicio tipoServicio);
+    public List<Servicio> devolverServiciosTipo (TipoServicio tipoServicio);
 }
